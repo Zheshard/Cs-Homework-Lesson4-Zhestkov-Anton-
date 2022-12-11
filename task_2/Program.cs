@@ -1,7 +1,8 @@
 ﻿// Программа, которая принимает на вход число и выдаёт сумму цифр в числе.
-int number = inputNumber("Введите число: ");
+int number = InputNumber("Введите число: ");
+System.Console.WriteLine(NumberSum(number));
 
-int inputNumber(string invitationText)
+int InputNumber(string invitationText)
 {
 	int number;
 	while (true)
@@ -15,4 +16,15 @@ int inputNumber(string invitationText)
 		Console.WriteLine("Введено неверное значение. Введите число: ");
 	}
 	return number;
+}
+
+int NumberSum(int num)
+{
+	string numString = Convert.ToString(num);
+	int sum = 0;
+	for (int i = 0; i < numString.Length; i++)
+	{
+		sum = sum + Convert.ToInt32($"{numString[i]}");
+	}
+	return sum;
 }
